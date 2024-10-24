@@ -74,13 +74,13 @@ def Morpion_IA():
             try:
                 tour = int(input(f"Joueur {joueur_actuel}, choisis un chiffre entre 1 et 9 pour te placer: "))
                 # Vérifie si la case n'est pas déjà prise sinon renvoie la question
+                if tour>=10 or tour<=0:
+                    print("\nApprend à compter\n")
+                    continue
                 if case[tour] in ["X", "O"]:
                     print("Tié trop lent le sang, c'est déjà pris")
                     continue
                 # Vérifie que le chiffre demandé est entre 1 et 9
-                if 1 > tour > 9:
-                    print("Apprends à compter")
-                    continue
             except ValueError:
                 print("Un chiffre entre 1 et 9, c'est pas compliqué nan ?")
                 continue
