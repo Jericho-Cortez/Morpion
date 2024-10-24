@@ -66,13 +66,13 @@ Morpion()
 
 #Matrice du tableau qui pourra etre modifié en cour de jeu
 def tableau(case):
-    print("\n")
+    print("")
     print(case[1],"|",case[2],"|",case[3])
     print("--|---|---")
     print(case[4],"|",case[5],"|",case[6])
     print("--|---|---")
     print(case[7],"|",case[8],"|",case[9])
-    print("\n")
+    print("")
 
 #Les differentes combinaisons pour determiner un gagnant
 def Condition_Pour_Gagner(case,joueur):
@@ -107,9 +107,9 @@ def Morpion():
             continue
         #Le joueur remplace la valeur de la case par X ou O
         case[tour]= joueur_actuel
-        print("\n")
+        print("")
         tableau(case)
-        print("\n")
+        print("")
 
         if Condition_Pour_Gagner(case,joueur_actuel):
             print(f"Joueur {joueur_actuel} à gagner\n")
