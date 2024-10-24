@@ -53,7 +53,4 @@ def Morpion():
     print("C'est FINI DEGAGE")
 
 Morpion()
-        
 
-        #Hello Jericho
-        # Ca marche?
