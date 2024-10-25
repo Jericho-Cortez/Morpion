@@ -22,22 +22,22 @@ def Morpion():
     joueur_actuel="X"
     partie_en_cour=True
     nombre_tour=0
-    print("\nViens Jouer Batard\n")
+    print("\nViens Jouer au morpion\n")
     tableau(case)
     while partie_en_cour:
         try:
             tour=int(input(f"\nJoueur {joueur_actuel} choisi un chiffre entre 1 a 9 pour te placer: \n"))
-            #verifie si la case n'est pas déja prise sinon renvoie la question
+            #verifie que le chiffre demander est entre 1 et 9
             if tour>=10 or tour<=0:
-                print("\nApprend à compter\n")
+                print("\nchoisir un chiffre entre 1 a 9 \n")
                 continue
+            #verifie si la case n'est pas déja prise sinon renvoie la question
             if case[tour] in ["X","O"]:
                 print("\nTié trop lent le sang, c'est deja pris\n")
                 continue
-            #verifie que le chiffre demander est entre 1 et 9
             #Si la réponse n'est pas un chiffre renvoie une erreur et repose la question
         except ValueError:
-            print("\nUn chiffre entre 1 a 9, c'est pas compliquer nan ?\n")
+            print("\nUn chiffre svp ?\n")
             continue
         #Le joueur remplace la valeur de la case par X ou O
         case[tour]= joueur_actuel
@@ -54,7 +54,7 @@ def Morpion():
         else:
             #alterne entre X et O si n'y a pas de gagnant
             joueur_actuel="O" if joueur_actuel=="X" else "X"
-    print("C'est FINI DEGAGE")
+    print("La partie est terminer")
 
 #Morpion()
 
@@ -65,7 +65,7 @@ def Morpion_IA():
     joueur_actuel = "X"
     partie_en_cour = True
     nombre_tour = 0
-    print("\nViens Jouer Batard\n")
+    print("\nViens Jouer au morpion\n")
     tableau(case)
     
     while partie_en_cour:
@@ -75,17 +75,17 @@ def Morpion_IA():
                 tour = int(input(f"Joueur {joueur_actuel}, choisis un chiffre entre 1 et 9 pour te placer: "))
                 # Vérifie si la case n'est pas déjà prise sinon renvoie la question
                 if tour>=10 or tour<=0:
-                    print("\nApprend à compter\n")
+                    print("\nchoisir un chiffre entre 1 a 9\n")
                     continue
                 if case[tour] in ["X", "O"]:
                     print("Tié trop lent le sang, c'est déjà pris")
                     continue
                 # Vérifie que le chiffre demandé est entre 1 et 9
             except ValueError:
-                print("Un chiffre entre 1 et 9, c'est pas compliqué nan ?")
+                print("Un chiffre svp ?")
                 continue
         else:
-            # Computer's turn
+            # tour de L'ia
             # Choisit la première case libre disponible
             for i in range(1, 10):
                 if case[i] not in ["X", "O"]:
@@ -108,17 +108,15 @@ def Morpion_IA():
             joueur_actuel = "O" if joueur_actuel == "X" else "X"
             nombre_tour += 1
     
-    print("C'est FINI, DÉGAGE")
+    print("la partie est terminer")
 
 
 
 
 def vs_human():
-    if input("\nDo you want to play against a friend (Yes or No): ") == "Yes":
+    if input("\nveut tu jouer contre un ami (Yes or No): ") == "Yes":
         Morpion()  
     else:
         Morpion_IA()  
 
 vs_human()
-
-# Hello#
